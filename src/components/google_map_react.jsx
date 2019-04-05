@@ -7,6 +7,10 @@ const API_KEY = process.env.GOOGLE_MAPS_API_KEY;
 
 class SimpleMap extends Component {
   static defaultProps = {
+    center: {
+      lat: 48.885707,
+      lng: 2.34689
+    },
     zoom: 11
   };
 
@@ -17,7 +21,7 @@ class SimpleMap extends Component {
       <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: API_KEY }}
-          defaultCenter={{ lat: selectedFlat.lat, lng: selectedFlat.lng }}
+          defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
           <Marker

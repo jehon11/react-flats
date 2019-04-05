@@ -15,7 +15,6 @@ const Flat = ({ flat, selectFlat, selectedFlat }) => {
         <h2>{flat.name}</h2>
       </div>
       <a className="card-link" href="#"></a>
-      {console.log(selectedFlat)}
     </div>
   );
 };
