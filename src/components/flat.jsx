@@ -6,15 +6,16 @@ const cardStyle = (url) => {
   };
 };
 
-const Flat = ({ flat, selectFlat }) => {
+const Flat = ({ flat, selectFlat, selectedFlat }) => {
   return (
-    <div className="card" style={cardStyle(flat.imageUrl)}
+    <div className={(selectedFlat.name === flat.name) ? "card selected-card" : "card"} style={cardStyle(flat.imageUrl)}
       onClick={() => {selectFlat(flat)}}>
       <div className="card-category">{flat.price}</div>
       <div className="card-description">
         <h2>{flat.name}</h2>
       </div>
       <a className="card-link" href="#"></a>
+      {console.log(selectedFlat)}
     </div>
   );
 };

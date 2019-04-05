@@ -4,10 +4,14 @@
   background-position: center;
   color: white;
   position: relative;
-  &.active {
-    border: 10px solid red;
-  }
+  border: 10px solid white;
+
 }
+
+.selected-card {
+  border: 10px solid red;
+}
+
 .card-user {
   position: absolute;
   right: 10px;

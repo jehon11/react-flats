@@ -21,7 +21,7 @@ class App extends Component {
   render() {
     return (
       <div style={{ margin: 0 }}>
-        <FlatList flatList={flats} selectFunction={this.selectFlat} />
+        <FlatList flatList={flats} selectedFlat={this.state.selected_flat} selectFunction={this.selectFlat} />
         <div className="map-container">
           <SimpleMap selectedFlat={this.state.selected_flat} />
         </div>
