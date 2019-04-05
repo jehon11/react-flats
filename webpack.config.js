@@ -1,5 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 module.exports = {
   output: {
@@ -9,7 +13,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: '!!html-loader!templates/index.html'
-    })
+    }),
+    new webpack.EnvironmentPlugin(['GOOGLE_MAPS_API_KEY'])
   ],
   devtool: 'sourcemap',
   module: {
@@ -32,5 +37,8 @@ module.exports = {
   },
   resolve: {
     extensions: [ '.js', '.jsx' ]
+  },
+  node: {
+    fs: 'empty'
   }
 };

@@ -6,9 +6,10 @@ const cardStyle = (url) => {
   };
 };
 
-const Flat = ({ flat }) => {
+const Flat = ({ flat, selectFlat }) => {
   return (
-    <div className="card" style={cardStyle(flat.imageUrl)}>
+    <div className="card" style={cardStyle(flat.imageUrl)}
+      onClick={() => {selectFlat(flat)}}>
       <div className="card-category">{flat.price}</div>
       <div className="card-description">
         <h2>{flat.name}</h2>

@@ -1,32 +1,32 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+import Marker from './marker';
 
-const API_KEY = process.env.GOOGLE_MAPS;
-
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const API_KEY = process.env.GOOGLE_MAPS_API_KEY;
 
 class SimpleMap extends Component {
   static defaultProps = {
     center: {
-      lat: 59.95,
-      lng: 30.33
+      lat: 48.885707,
+      lng: 2.34689
     },
     zoom: 11
   };
 
   render() {
+    const { selectedFlat } = this.props;
     return (
       // Important! Always set the container height explicitly
       <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: "AIzaSyBOysyzMtgAuEN6e50ATL_UxS2CaqQXEPo" }}
+          bootstrapURLKeys={{ key: API_KEY }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
-          <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
+          <Marker
+            lat={selectedFlat.lat}
+            lng={selectedFlat.lng}
             text="My Marker"
           />
         </GoogleMapReact>
